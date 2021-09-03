@@ -12,7 +12,7 @@ state = {
   baseUrl: 'https://api.thecatapi.com/v1/images/search',
   apiKey: 'fd55d926-6fea-4581-aaa2-a4be59791716',
   query: 'attach_breed',
-  catData: [],
+  catData: '',
 }
 
 handleChange = (event)=> {
@@ -48,8 +48,12 @@ handleSubmit = (event) => {
           />
           <button type="submit">Submit</button>
         </form>
-      { this.catData.map()
-        <CatInfo catbreed={this.state.catData}/>
+      { this.state.catData.map((animal, index) => {
+        return (
+    
+        <CatInfo key={index} catbreed={animal}/>
+        )
+      })
       } 
       </div>
     );
